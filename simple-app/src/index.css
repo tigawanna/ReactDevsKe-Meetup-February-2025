@@ -1,1 +1,11 @@
 @import "tailwindcss";
+
+
+@plugin "daisyui" {
+  themes: abyss --default, forest --prefersdark;
+  root: ":root";
+  include: ;
+  exclude: ;
+  prefix: ;
+  logs: true;
+}
