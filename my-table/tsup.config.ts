@@ -7,5 +7,5 @@ export default defineConfig({
   dts: true,
   clean: true,
   minify: false,
-  platform: "node",
+  platform: "browser",
 });

@@ -1,4 +1,4 @@
-import { PossibleNestedUnions } from "../types/nested_objects_union";
+import type { PossibleNestedUnions } from "../types/nested_objects_union";
 import { getNestedProperty } from "../utils/object";
 
 type GenericItem = Record<string, string | number | object>&{id:string}
