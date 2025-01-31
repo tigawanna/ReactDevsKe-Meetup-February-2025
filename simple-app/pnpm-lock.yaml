@@ -11,6 +11,15 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.1
         version: 4.0.1(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1))
+      i:
+        specifier: ^0.3.7
+        version: 0.3.7
+      my-table-package:
+        specifier: link:/home/dennis/Desktop/packaging/table-package
+        version: link:../table-package
+      pp:
+        specifier: ^1.0.0
+        version: 1.0.0
       react:
         specifier: ^19.0.0
         version: 19.0.0
@@ -48,6 +57,9 @@ importers:
       globals:
         specifier: ^15.14.0
         version: 15.14.0
+      theme-change:
+        specifier: ^2.5.0
+        version: 2.5.0
       typescript:
         specifier: ~5.7.3
         version: 5.7.3
@@ -865,6 +877,10 @@ packages:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
 
+  i@0.3.7:
+    resolution: {integrity: sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==}
+    engines: {node: '>=0.4'}
+
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
@@ -1067,6 +1083,9 @@ packages:
     resolution: {integrity: sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==}
     engines: {node: ^10 || ^12 || >=14}
 
+  pp@1.0.0:
+    resolution: {integrity: sha512-MBHA+YBzASvT8ErZ43hjSRjVVFNhs6JYZKhX9eUMl/pi7fSzKi+xXI2vjrrk3GZbBbqmU6efcQuQ1gUrAJlroA==}
+
   prelude-ls@1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
@@ -1145,6 +1164,9 @@ packages:
   tapable@2.2.1:
     resolution: {integrity: sha512-GNzQvQTOIP6RyTfE2Qxb8ZVlNmw0n88vp1szwWRimP02mnTsx3Wtn5qRdqY9w2XduFNUgvOwhNnQsjwCp+kqaQ==}
     engines: {node: '>=6'}
+
+  theme-change@2.5.0:
+    resolution: {integrity: sha512-B/UdsgdHAGhSKHTAQnxg/etN0RaMDpehuJmZIjLMDVJ6DGIliRHGD6pODi1CXLQAN9GV0GSyB3G6yCuK05PkPQ==}
 
   to-regex-range@5.0.1:
     resolution: {integrity: sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==}
@@ -2008,6 +2030,8 @@ snapshots:
 
   has-flag@4.0.0: {}
 
+  i@0.3.7: {}
+
   ignore@5.3.2: {}
 
   import-fresh@3.3.0:
@@ -2167,6 +2191,8 @@ snapshots:
       picocolors: 1.1.1
       source-map-js: 1.2.1
 
+  pp@1.0.0: {}
+
   prelude-ls@1.2.1: {}
 
   punycode@2.3.1: {}
@@ -2238,6 +2264,8 @@ snapshots:
   tailwindcss@4.0.1: {}
 
   tapable@2.2.1: {}
+
+  theme-change@2.5.0: {}
 
   to-regex-range@5.0.1:
     dependencies:

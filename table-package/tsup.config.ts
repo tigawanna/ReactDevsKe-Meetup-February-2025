@@ -1,7 +1,7 @@
 import { defineConfig } from "tsup";
 
 export default defineConfig({
-  entry: ["src/index.ts"],
+  entry: ["src/index.ts","src/components/RedSquare.tsx"],
   splitting: false,
   format: ["cjs", "esm"],
   dts: true,
