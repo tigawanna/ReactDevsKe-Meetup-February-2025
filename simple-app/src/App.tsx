@@ -8,7 +8,7 @@ import viteLogo from "/vite.svg";
 
 function App() {
   return (
-    <div className="w-full min-h-screen h-full justify-center items-center flex flex-col ">
+    <div className="w-full min-h-screen h-full justify-center gap-10 items-center flex flex-col ">
       <div className="flex flex-col h-full items-center justify-center">
         <img src={viteLogo} className="h-52 w-52" alt="Vite logo" />
       </div>
