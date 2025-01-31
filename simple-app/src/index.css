@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @plugin "daisyui" {
-  themes: abyss --default, forest --prefersdark;
+  themes: abyss --default, caramellatte --prefersdark;
   root: ":root";
   include: ;
   exclude: ;

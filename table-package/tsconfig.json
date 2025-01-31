@@ -24,8 +24,8 @@
     "declaration": true,
 
     /* AND if you're building for a library in a monorepo: */
-    "composite": true,
-    "declarationMap": true,
+    // "composite": true,
+    // "declarationMap": true,
 
     /* If NOT transpiling with TypeScript: */
     "module": "preserve",
@@ -38,8 +38,9 @@
     // "lib": ["es2022"]
     "paths": {
       "@/*": ["./src/*"]
-    }
+    },
+    
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*.tsx","src/**/*.ts", "src/*.ts"],
   "exclude": ["dist", "node_modules"]
 }

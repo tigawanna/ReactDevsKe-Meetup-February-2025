@@ -6,6 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
+    "files": [
+      "dist"
+    ],
   "keywords": ["my-table-package","react-tailwind-table"],
   "author": "tigawanna",
   "repository": "https://github.com/tigawanna/my-tablemy-table-package",
