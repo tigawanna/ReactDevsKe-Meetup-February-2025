@@ -1,15 +1,15 @@
 {
-  "name": "my-table",
+  "name": "my-table-package",
   "version": "1.0.0",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "type": "module",
-  "keywords": ["my-table","react--tailwindtable"],
+  "keywords": ["my-table-package","react-tailwind-table"],
   "author": "tigawanna",
-  "repository": "https://github.com/tigawanna/my-table",
-  "bugs": "https://github.com/tigawanna/my-table/issues",
+  "repository": "https://github.com/tigawanna/my-tablemy-table-package",
+  "bugs": "https://github.com/tigawanna/my-tablemy-table-package/issues",
   "license": "MIT",
   "description": "",
   "devDependencies": {
