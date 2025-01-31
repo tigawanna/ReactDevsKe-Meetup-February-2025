@@ -11,12 +11,6 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.1
         version: 4.0.1(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1))
-      i:
-        specifier: ^0.3.7
-        version: 0.3.7
-      my-table-package:
-        specifier: link:/home/dennis/Desktop/packaging/table-package
-        version: link:../table-package
       pp:
         specifier: ^1.0.0
         version: 1.0.0
@@ -26,6 +20,9 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
+      table-package:
+        specifier: link:home/dennis/Desktop/packaging/table-package
+        version: link:home/dennis/Desktop/packaging/table-package
       tailwindcss:
         specifier: ^4.0.1
         version: 4.0.1
@@ -876,10 +873,6 @@ packages:
   has-flag@4.0.0:
     resolution: {integrity: sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==}
     engines: {node: '>=8'}
-
-  i@0.3.7:
-    resolution: {integrity: sha512-FYz4wlXgkQwIPqhzC5TdNMLSE5+GS1IIDJZY/1ZiEPCT2S3COUVZeT5OW4BmW4r5LHLQuOosSwsvnroG9GR59Q==}
-    engines: {node: '>=0.4'}
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
@@ -2029,8 +2022,6 @@ snapshots:
   graphemer@1.4.0: {}
 
   has-flag@4.0.0: {}
-
-  i@0.3.7: {}
 
   ignore@5.3.2: {}
 
