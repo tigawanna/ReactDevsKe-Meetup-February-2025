@@ -11,10 +11,10 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.1",
+    "my-table-package": "link:/home/dennis/Desktop/packaging/my-table-package",
     "pp": "^1.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "table-package": "link:home/dennis/Desktop/packaging/table-package",
     "tailwindcss": "^4.0.1"
   },
   "devDependencies": {

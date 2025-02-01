@@ -11,6 +11,9 @@ importers:
       '@tailwindcss/vite':
         specifier: ^4.0.1
         version: 4.0.1(vite@6.0.11(jiti@2.4.2)(lightningcss@1.29.1))
+      my-table-package:
+        specifier: link:/home/dennis/Desktop/packaging/my-table-package
+        version: link:../my-table-package
       pp:
         specifier: ^1.0.0
         version: 1.0.0
@@ -20,9 +23,6 @@ importers:
       react-dom:
         specifier: ^19.0.0
         version: 19.0.0(react@19.0.0)
-      table-package:
-        specifier: link:home/dennis/Desktop/packaging/table-package
-        version: link:home/dennis/Desktop/packaging/table-package
       tailwindcss:
         specifier: ^4.0.1
         version: 4.0.1
