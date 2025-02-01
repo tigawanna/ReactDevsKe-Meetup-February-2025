@@ -3,7 +3,7 @@
 export function ThemeToggle(){
 return (
     <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn m-1">
+      <div tabIndex={0} role="button" className="btn m-1 p-1">
         Theme
         <svg
           width="12px"
@@ -19,7 +19,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Default"
             value="default"
           />
@@ -28,7 +28,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Light"
             value="light"
           />
@@ -37,7 +37,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Cyberpunk"
             value="cyberpunk"
           />
@@ -46,7 +46,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Valentine"
             value="valentine"
           />
@@ -55,7 +55,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Aqua"
             value="aqua"
           />
@@ -64,7 +64,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Dark"
             value="dark"
           />
@@ -73,7 +73,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Cupcake"
             value="cupcake"
           />
@@ -82,7 +82,7 @@ return (
           <input
             type="radio"
             name="theme-dropdown"
-            className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+            className="theme-controller btn btn-sm btn-block p-1 m-1 btn-ghost justify-start"
             aria-label="Forest"
             value="forest"
           />

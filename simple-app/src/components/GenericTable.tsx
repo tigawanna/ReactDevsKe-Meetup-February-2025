@@ -39,3 +39,44 @@ export function GenericTable<T extends Record<string, string|number >>({
     </div>
   );
 }
+
+
+//       <ThemeToggle />
+
+//       <RedSquare />
+
+//       <GenericTableWithNestedFields
+//         data={playerranksWithSatas}
+//         columns={[
+//           {
+//             label: "ID",
+//             accessor: "id",
+//           },
+//           {
+//             accessor: "name",
+//             label: "Name",
+//           },
+//           { accessor: "age", label: "Age" },
+//           { accessor: "rank", label: "Rank" },
+//           { accessor: "stats.wins", label: "Wins" },
+//           { accessor: "stats.losses", label: "Losses" },
+//         ]}
+//       />
+//       <GenericTable
+//         data={playerranks}
+//         columns={[
+//           {
+//             label: "ID",
+//             accessor: "id",
+//           },
+//           {
+//             accessor: "name",
+//             label: "Name",
+//           },
+//           { accessor: "age", label: "Age" },
+//           { accessor: "rank", label: "Rank" },
+//         ]}
+//       />
+//       <HardCodedTable />
+// <DynamicRowsTable />
+// <DynamicRowsAndColumnsTable />
