@@ -21,8 +21,8 @@
     "react-tailwind-table"
   ],
   "author": "tigawanna",
-  "repository": "https://github.com/tigawanna/my-tablemy-table-package",
-  "bugs": "https://github.com/tigawanna/my-tablemy-table-package/issues",
+  "repository": "https://github.com/tigawanna/my-table-package",
+  "bugs": "https://github.com/tigawanna/my-table-package/issues",
   "license": "MIT",
   "description": "",
     "main": "dist/index.js",

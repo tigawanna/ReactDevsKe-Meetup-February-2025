@@ -1,7 +1,7 @@
 import { DynamicRowsAndColumnsTable } from "./components/DynamicRowsAndColumnsTable";
 import { DynamicRowsTable } from "./components/DynamicRowsTable";
-import { GenericTableWithNestedFields, GenericTable } from "my-table-package";
-import { RedSquare } from "my-table-package/redbox";
+import { GenericTableWithNestedFields, GenericTable } from "table-package";
+import { RedSquare } from "table-package/redbox";
 import { HardCodedTable } from "./components/HardCodedTable";
 import { playerranks, playerranksWithSatas } from "./data/paley-data";
 import { ThemeToggle } from "./components/ThemeToggle";
