@@ -15,9 +15,9 @@
     "noUncheckedIndexedAccess": true,
     "noImplicitOverride": true,
 
+    "outDir": "dist",
     /* If transpiling with TypeScript: */
     // "module": "NodeNext",
-    "outDir": "dist",
     // "sourceMap": true,
 
     /* AND if you're building for a library: */
@@ -37,10 +37,12 @@
     /* If your code doesn't run in the DOM: */
     // "lib": ["es2022"]
     "paths": {
+      // allows you to import like `import { someUtil } from "@/utils" instaed of `import { someUtil } from "./src/utils"`
       "@/*": ["./src/*"]
-    },
-    
+   },   
   },
-  "include": ["src/**/*.tsx","src/**/*.ts", "src/*.ts"],
+  // only files under `src` will be transpiled
+  "include": ["src"],
+  // exclude files under `dist` and `node_modules`
   "exclude": ["dist", "node_modules"]
 }
