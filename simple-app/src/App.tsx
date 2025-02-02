@@ -1,15 +1,9 @@
-import { GenericPlayerstable } from "./components/GenericPlayersTable";
-import { GenericPlayersTableWithNestedFields } from "./components/GenericPlayersTableWithNestedFields";
+import {  GenericTableWithNestedFields } from "./components/GenericPlayersTableWithNestedFields";
 import { ThemeToggle } from "./components/ThemeToggle";
-import { FlatObjectKeys } from "./types/nested_objects_union";
 
 export default function App() {
 
-  const teamsRows = [
-    { title: "Team1", id: 1, odds: 10 },
-    { title: "Team2", id: 2, odds: 15 },
-    { title: "Team3", id: 3, odds: 20 },
-  ];
+
    const gooddata = [
      {
        id: "1",
@@ -51,7 +45,20 @@ export default function App() {
   return (
     <div className="w-full h-full flex flex-col items-center gap-10 justify-center p-10">
       <ThemeToggle />
-      <GenericPlayersTableWithNestedFields
+      <GenericTableWithNestedFields
+      title="Players Table"
+        description="list of payers without their stats"
+        data={gooddata}
+        columns={[
+          { accessor: "id", label: "age" },
+          { accessor: "name", label: "name" },
+          { accessor: "age", label: "age" },
+          { accessor: "rank", label: "rank" },
+        ]}
+      />
+      <GenericTableWithNestedFields
+      title="Players Table"
+        description="list of payers with their stats"
         data={gooddata}
         columns={[
           { accessor: "id", label: "age" },
@@ -61,9 +68,7 @@ export default function App() {
           { accessor: "stats.running", label: "running" },
           { accessor: "stats.jumping", label: "jumping" },
           { accessor: "stats.swimming", label: "swimming" },
-          { accessor: "stats", label: "swimming" },
           { accessor: "stats.weapons.blades.short", label: "katana" },
-   
         ]}
       />
     </div>

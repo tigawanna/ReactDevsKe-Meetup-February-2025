@@ -1,26 +1,30 @@
 import { PossibleNestedUnions } from "../types/nested_objects_union";
 import { getNestedProperty } from "../utils/object";
 
-type GenericItem = Record<string, string | number | object>&{id:string}
+type GenericItem = Record<string, string | number | object> & { id: string };
 type TableColumn<T extends GenericItem> = {
   label: string;
-  accessor: PossibleNestedUnions<T,10> & string;
+  accessor: PossibleNestedUnions<T, 10> & string;
 };
 
 interface GenericTableProps<T extends GenericItem> {
+  title:string;
+  description?:string;
   columns: Array<TableColumn<T>>;
   data: Array<T>;
 }
 
-export function GenericPlayersTableWithNestedFields<T extends GenericItem>({
+export function GenericTableWithNestedFields<T extends GenericItem>({
+  title,
+  description,
   data,
   columns,
 }: GenericTableProps<T>) {
   return (
     <div className="w-full h-full flex flex-col items-center justify-center">
-      <h1 className="text-3xl font-bold">Player ranks</h1>
-      <p className="test-sm">Player Table with Dynamic rows and columns</p>
-      <div className="overflow-x-auto w-full max-w-[70%]">
+      <h1 className="text-3xl font-bold">{title}</h1>
+      <p className="test-sm">{description}</p>
+      <div className="overflow-x-auto w-full max-w-[90%]">
         <table className="table table-zebra table-xl">
           {/* head */}
           <thead>
@@ -35,9 +39,23 @@ export function GenericPlayersTableWithNestedFields<T extends GenericItem>({
               <tr key={row.id}>
                 {columns.map((column) => {
                   const value = row[column.accessor];
-                  if (typeof value === "object") {
+                  // this line grabs the nested object and maps it to a <td>
+                  if (column.accessor.includes(".")) {
                     return <td key={column.accessor}>{getNestedProperty(row, column.accessor)}</td>;
                   }
+                  //  we've already checked if the accessor is a nested object but typescript is not yet aware and 
+                  // still thinks value is type string | number | objct at this point 
+                  //  this part is only here to narrow the type or catch objects types that fell through
+                  //  so that the value type on the section below is of type string | number
+                  if (typeof value === "object") {
+                    const nestedValue = getNestedProperty(row, column.accessor)
+                    if(typeof nestedValue !== "string" || typeof nestedValue !== "number") {
+                      // to avoid accidentally trying to renedr objects as react children
+                      return <td key={column.accessor}>{JSON.stringify(nestedValue)}</td>;
+                    }
+                    return <td key={column.accessor}>{getNestedProperty(row, column.accessor)}</td>;
+                  }
+                  // value type is string| number , safe to render ina react td 
                   return <td key={column.accessor}>{value}</td>;
                 })}
               </tr>
@@ -49,42 +67,4 @@ export function GenericPlayersTableWithNestedFields<T extends GenericItem>({
   );
 }
 
-//       <ThemeToggle />
 
-//       <RedSquare />
-
-//       <GenericTableWithNestedFields
-//         data={playerranksWithSatas}
-//         columns={[
-//           {
-//             label: "ID",
-//             accessor: "id",
-//           },
-//           {
-//             accessor: "name",
-//             label: "Name",
-//           },
-//           { accessor: "age", label: "Age" },
-//           { accessor: "rank", label: "Rank" },
-//           { accessor: "stats.wins", label: "Wins" },
-//           { accessor: "stats.losses", label: "Losses" },
-//         ]}
-//       />
-//       <GenericTable
-//         data={playerranks}
-//         columns={[
-//           {
-//             label: "ID",
-//             accessor: "id",
-//           },
-//           {
-//             accessor: "name",
-//             label: "Name",
-//           },
-//           { accessor: "age", label: "Age" },
-//           { accessor: "rank", label: "Rank" },
-//         ]}
-//       />
-//       <HardCodedTable />
-// <DynamicRowsTable />
-// <DynamicRowsAndColumnsTable />

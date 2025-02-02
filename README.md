@@ -311,5 +311,105 @@ interface GenericTableProps<T extends GenericItem> {
 }
 ```
 
-
+with the array
+```ts
+   const gooddata = [
+     {
+       id: "1",
+       name: "John Doe",
+       age: 30,
+       rank: "Gold",
+       stats:{
+        running:20,
+        jumping:10,
+        swimming:30,
+        weapons:{
+          stars:10,
+          katana:5
+        }
+       }
+     },
+     {
+       id: "2",
+       name: "Pedro",
+       age: 30,
+       rank: "Gold",
+       stats:{
+        running:20,
+        jumping:10,
+        swimming:30,
+        weapons:{
+          stars:1,
+          katana:4,
+          blades:{
+            short:10,
+            long:5
+          }
+        }
+       }
+     },
+   ];
+```
+we'll get auto complete for all the possibly nested types
 ![netsed-values-auto comlete](https://github.com/tigawanna/ReactDevsKe-Meetup-February-2025/raw/main/docs/netsed-values-auto%20comlete.png)
+
+the last thing to do is to handle possible edge cases and make the title and description of the table dynamic too because we can render more than just players with this component
+
+```tsx
+          <tbody>
+            {data.map((row) => (
+              <tr key={row.id}>
+                {columns.map((column) => {
+                  const value = row[column.accessor];
+                  // this line grabs the nested object and maps it to a <td>
+                  if (column.accessor.includes(".")) {
+                    return <td key={column.accessor}>{getNestedProperty(row, column.accessor)}</td>;
+                  }
+                  //  we've already checked if the accessor is a nested object but typescript is not yet aware and 
+                  // still thinks value is type string | number | objct at this point 
+                  //  this part is only here to narrow the type or catch objects types that fell through
+                  //  so that the value type on the section below is of type string | number
+                  if (typeof value === "object") {
+                    const nestedValue = getNestedProperty(row, column.accessor)
+                    if(typeof nestedValue !== "string" || typeof nestedValue !== "number") {
+                      // to avoid accidentally trying to renedr objects as react children
+                      return <td key={column.accessor}>{JSON.stringify(nestedValue)}</td>;
+                    }
+                    return <td key={column.accessor}>{getNestedProperty(row, column.accessor)}</td>;
+                  }
+                  // value type is string| number , safe to render ina react td 
+                  return <td key={column.accessor}>{value}</td>;
+                })}
+              </tr>
+            ))}
+          </tbody>
+```
+
+```tsx
+      <GenericTableWithNestedFields
+      title="Players Table"
+        description="list of players without their stats"
+        data={gooddata}
+        columns={[
+          { accessor: "id", label: "age" },
+          { accessor: "name", label: "name" },
+          { accessor: "age", label: "age" },
+          { accessor: "rank", label: "rank" },
+        ]}
+      />
+      <GenericTableWithNestedFields
+      title="Players Table with stats"
+        description="list of players with their stats"
+        data={gooddata}
+        columns={[
+          { accessor: "id", label: "age" },
+          { accessor: "name", label: "name" },
+          { accessor: "age", label: "age" },
+          { accessor: "rank", label: "rank" },
+          { accessor: "stats.running", label: "running" },
+          { accessor: "stats.jumping", label: "jumping" },
+          { accessor: "stats.swimming", label: "swimming" },
+          { accessor: "stats.weapons.blades.short", label: "katana" },
+        ]}
+      />
+```
