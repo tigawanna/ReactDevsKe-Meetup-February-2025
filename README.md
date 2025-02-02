@@ -1,4 +1,4 @@
-# React deks Ke Meetup February 2025 | Crafting Reusable Code with React & TypeScript: From Design to NPM 
+# React devs KE Meetup February 2025 | Crafting Reusable Code with React & TypeScript: From Design to NPM 
 
 [slides used in the presentation](https://docs.google.com/presentation/d/1yFKSxNL-MHYddVMmt-dVi9wdlypw-aev2w7-I_O3aD0/edit?usp=sharing)
 
@@ -574,7 +574,7 @@ entry points are defined in the `package.json` file
     "typescript": "^5.7.3"
   }
 }
-
+```
 We'll build this package using tsup . we can use `tsc (the typescript compiler)` to build the package but that would require some changes
 
 ```json 
@@ -585,7 +585,9 @@ We'll build this package using tsup . we can use `tsc (the typescript compiler)`
     "sourceMap": true,
 }
 ```
+
 which requires that all our import should end with the file extension name 
+
 ```ts
 import { GenericTable } from "./src/components/GenericTable";
 // to be 
@@ -626,6 +628,7 @@ export default defineConfig({
   }
 }
 ```
+
 ```sh
 npm run build
 ```
@@ -650,6 +653,7 @@ which adds a linked package like this
     "tailwindcss": "^4.0.1"
   }
 ```
+
 >[!NOTE] 
 if u're not using pnpm u can use `npm link` instead of `pnpm install`
 
@@ -660,6 +664,7 @@ to make it usable by everyone we publish it to npm using
 ```sh
 npm publish
 ```
+
 >[!NOTE]
  once at least one project installs your library it will be 
  undeletable from the npm registry
@@ -667,6 +672,7 @@ npm publish
 ### Extras
 - check exports with [are the types correct](https://github.com/arethetypeswrong/arethetypeswrong.github.io#readme)
 to chek if everything is being exported correctly
+
 ```json
 {
   "scripts": {
